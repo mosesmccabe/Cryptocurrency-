@@ -4,7 +4,7 @@ Part 2: Decentralize Blockchain to create a Cryptocurrency.
 ```
 
 ## What is Cryptocurrency?
-Cryptocurrency such as Bitcoin, Ethereum, Ripple, etc..., are Protocol that facilitates Blockchain technology and move it practice so that a network of people can transact with eachother. 
+Cryptocurrency such as Bitcoin, Ethereum, Ripple, etc..., are Protocol that facilitates Blockchain technology and move it into practice so that a network of people can transact with eachother. 
 
 <img width="846" alt="Screen Shot 2022-04-02 at 7 47 01 PM" src="https://user-images.githubusercontent.com/25771787/161408998-a1ada7f4-5624-47df-bc66-4f53eb399c78.png">
 
@@ -30,6 +30,17 @@ Cryptocurrency such as Bitcoin, Ethereum, Ripple, etc..., are Protocol that faci
       -  tab 1 enter `{"nodes": ["http://127.0.0.1:5003", "http://127.0.0.1:5004"}`
       -  tab 2 enter `{"nodes": ["http://127.0.0.1:5002", "http://127.0.0.1:5004"}`
       -  tab 3 enter `{"nodes": ["http://127.0.0.1:5003", "http://127.0.0.1:5001"}` <img width="941" alt="Screen Shot 2022-04-02 at 10 07 48 PM" src="https://user-images.githubusercontent.com/25771787/161412519-ad4dda64-70ea-4837-ba19-c4e10acffccb.png">
+    -  Test the consensus. What will happen if one node is larger than the chains on the other nodes
+         - step 1: Mine a block one any tab for ex: `select GET enter the URL http://127.0.0.1:5002/mine_block click Send`
+         - step 2: Used the **replace chain request** to replace the chain with the longest node `ex select GET enter the URL http://127.0.0.1:5003/replace_chain click Send` <img width="992" alt="Screen Shot 2022-04-03 at 2 03 43 AM" src="https://user-images.githubusercontent.com/25771787/161420184-b6744649-3a41-47ba-b47f-8c1f9d19367f.png">
+    - Sent transaction by `ex: selecting POST. enter the URL http://127.0.0.1:5004/add_transaction`
+      - press the body, press raw, select JSON in the builder
+    - enter the follow json codes in the body of each tabs than click **Send**:
+      -  tab 1 enter `{"sender": "You","receiver": "Peace","amount": 100}` <img width="863" alt="Screen Shot 2022-04-03 at 2 16 34 AM" src="https://user-images.githubusercontent.com/25771787/161420636-0c7e1fac-251c-4ecf-9139-ff8def0604c4.png">
+    - The Transaction is in the staging area **MEMPOOL** until it's selected by a miner and mine onto a block
+      -  Mine a block one any tab for ex: `select GET enter the URL http://127.0.0.1:5004/mine_block click Send` <img width="866" alt="Screen Shot 2022-04-03 at 2 29 46 AM" src="https://user-images.githubusercontent.com/25771787/161421050-ded6429a-b663-4fec-b4e8-2d9ab0308926.png">
+      -  use the replace chain request to update the chain with the longer nodes
+
 
 
 
